@@ -6,6 +6,7 @@ import { catchError, map, Observable, of, startWith } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { AppDataState, DataStateEnum } from '../../state/product.state';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -26,7 +27,10 @@ export class ProductsComponent implements OnInit {
   products$: Observable<AppDataState<Product[]>> | null = null;
   readonly DataStateEnum = DataStateEnum;
 
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -110,6 +114,13 @@ export class ProductsComponent implements OnInit {
   onUpdateProduct(product: Product) {
     console.log('update product', product);
   }
+
+  // create product
+  onNewProduct() {
+    // use router there to navigate to form Add
+    this.router.navigateByUrl('/newProduct');
+  }
+
   /////////////////////////////////////////
   // get product selected
   onGetSelectedProduct() {
