@@ -5,6 +5,11 @@ export enum ProductActionsTypes {
   GET_AVALIABLE_PRODUCTS = '[Product] Get Available products',
   SEARCH_PRODUCTS = '[Product] Serearch Products',
   NEW_PRODUCT = '[Product] New Product',
+  // Product List
+  SELECTED_PRODUCT = '[Product] Selected Product',
+  AVAILIABLE_PRODUCT = '[Product] Avaliable Selected Product',
+  UPDATE_PRODUCT = '[Product] Update Product',
+  DELETE_PRODUCT = '[Product] Delete Product',
 }
 
 // interface qui enviyer un evenement

@@ -13,6 +13,7 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductNavbarComponent } from '../../pages/product-navbar/product-navbar.component';
+import { ProductListComponent } from '../../pages/product-list/product-list.component';
 
 @Component({
   selector: 'app-products',
@@ -25,6 +26,7 @@ import { ProductNavbarComponent } from '../../pages/product-navbar/product-navba
     ReactiveFormsModule,
     ProductNavbarComponent,
     ProductNavbarComponent,
+    ProductListComponent,
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
@@ -169,6 +171,21 @@ export class ProductsComponent implements OnInit {
 
       case ProductActionsTypes.NEW_PRODUCT:
         this.onNewProduct();
+        break;
+
+      case ProductActionsTypes.SELECTED_PRODUCT:
+        this.onSelectProduct($event.payload);
+        break;
+
+      case ProductActionsTypes.AVAILIABLE_PRODUCT:
+        this.onAvaliableProduct($event.payload);
+        break;
+
+      case ProductActionsTypes.UPDATE_PRODUCT:
+        this.onUpdateProduct($event.payload);
+        break;
+      case ProductActionsTypes.DELETE_PRODUCT:
+        this.onDeleteProduct($event.payload);
         break;
 
       default:
