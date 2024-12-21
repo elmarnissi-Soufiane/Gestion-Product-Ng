@@ -1,41 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-    <ul class="navbar navbar-nav">
-        <li>
-            <button (click)="onGetAllProducts()" class="btn btn-sm btn-outline-info m-3">
-        All
-      </button>
-        </li>
-        <li>
-            <button (click)="onGetSelectedProduct()" class="btn btn-sm btn-outline-info m-3">
-        Selected
-      </button>
-        </li>
-        <li>
-            <button (click)="onGetAvaiableProduct()" class="btn btn-sm btn-outline-info m-3">
-        Available
-      </button>
-        </li>
-        <li>
-            <button (click)="onNewProduct()" class="btn btn-sm btn-outline-info m-3">
-        New
-      </button>
-        </li>
-    </ul>
-    <ul class="navbar navbar-nav ml-auto">
-        <li class="nav-item">
-            <form class="form-inline" #formSearch="ngForm" (ngSubmit)="onSerach(formSearch.value)">
-                <div class="input-group">
-                    <input ngModel name="keyword" type="text" class="form-control" placeholder="Search products..." aria-label="Search products" aria-describedby="search-button" />
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-info" type="submit" id="search-button">
-              <span class="fa fa-search"></span>
-            </button>
-                    </div>
-                </div>
-            </form>
-        </li>
-    </ul>
-</nav>
+<app-product-navbar (productEventEmitter)="onActionEvent($event)"></app-product-navbar>
 
 <!-- Pipe -->
 <div class="container">
@@ -95,38 +58,3 @@
         </div>
     </ng-container>
 </div>
-
-<!-- Observable subscribe-->
-<!-- <div class="container" *ngIf="products$ | async as products; else loading">
-    <table class="table">
-        <tr>
-            <th>Identity</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Selected</th>
-            <th>Available</th>
-            <th>Actions</th>
-        </tr>
-
-        <tr *ngFor="let product of products">
-            <td>{{ product.id }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.quantity }}</td>
-            <td>{{ product.selected ? "Yes" : "No" }}</td>
-            <td>{{ product.available ? "Yes" : "No" }}</td>
-            <td>
-                <button class="btn btn-sm btn-danger">Delete</button>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<ng-template #loading>
-    <div class="d-flex justify-content-center">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Chargement en cours...</span>
-        </div>
-    </div>
-</ng-template> -->

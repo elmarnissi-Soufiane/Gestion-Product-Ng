@@ -60,7 +60,7 @@ export class ProductsService {
     let validHost = 'http://localhost:3000';
     let failedHots = 'http://localhost:8000';
     let host = Math.random() > 0.2 ? validHost : failedHots;
-    return this.http.get<Product[]>(host + '/products?select=true');
+    return this.http.get<Product[]>(host + '/products?selected=true');
   }
 
   // onSelectProduct
@@ -77,7 +77,7 @@ export class ProductsService {
   }
 
   // get available
-  getAvailableProduts(): Observable<Product[]> {
+  getAvailableProducts(): Observable<Product[]> {
     //let host = environment.host;
     let host = 'http://localhost:3000';
     return this.http.get<Product[]>(host + '/products?available=true');

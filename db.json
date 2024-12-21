@@ -13,7 +13,7 @@
       "name": "USB-C Charger",
       "price": 19.99,
       "quantity": 200,
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {
@@ -62,111 +62,111 @@
       "price": 859,
       "quantity": 44,
       "selected": false,
-      "available": true
+      "available": false
     },
     {
       "id": "1669",
       "name": "",
       "price": 0,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "62f6",
       "name": "kkdjlk",
       "price": 0,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "4bed",
       "name": "lkjl",
       "price": 0,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "e954",
       "name": "lkjl",
       "price": 454,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "7b25",
       "name": "lkjl",
       "price": 454,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "bd4d",
       "name": "lkjl",
       "price": 454,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "c0ce",
       "name": "lkjl",
       "price": 4545,
       "quantity": 4546,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "0794",
       "name": "lkjl",
       "price": 4545,
       "quantity": 4546,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "73d5",
       "name": "lkjl",
       "price": 4545,
       "quantity": 4546,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "714f",
       "name": "lkjl",
       "price": 4545,
       "quantity": 4546,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "9c5a",
       "name": "ùlml",
       "price": 2,
       "quantity": 4546,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "bf4d",
       "name": "mkml",
       "price": 0,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "7a28",
       "name": "mkml",
       "price": 0,
       "quantity": 0,
-      "selected": true,
-      "available": true
+      "selected": false,
+      "available": false
     },
     {
       "id": "fbf7",
@@ -174,7 +174,7 @@
       "price": 21,
       "quantity": 1321,
       "selected": false,
-      "available": true
+      "available": false
     }
   ]
 }

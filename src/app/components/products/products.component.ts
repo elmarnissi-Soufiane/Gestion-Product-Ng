@@ -4,9 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { Product } from '../../models/product';
 import { catchError, map, Observable, of, startWith } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { AppDataState, DataStateEnum } from '../../state/product.state';
+import {
+  ActionEvent,
+  AppDataState,
+  DataStateEnum,
+  ProductActionsTypes,
+} from '../../state/product.state';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ProductNavbarComponent } from '../../pages/product-navbar/product-navbar.component';
 
 @Component({
   selector: 'app-products',
@@ -17,13 +23,13 @@ import { Router } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    ProductNavbarComponent,
+    ProductNavbarComponent,
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
 export class ProductsComponent implements OnInit {
-  //products: Product[] | null = null; // M1
-  //products$: Observable<Product[]> | null = null; // M2
   products$: Observable<AppDataState<Product[]>> | null = null;
   readonly DataStateEnum = DataStateEnum;
 
@@ -36,24 +42,6 @@ export class ProductsComponent implements OnInit {
 
   // recuperer les products
   onGetAllProducts() {
-    // Methode 1
-    // Stocke l'observable pour le template avec l'async pipe
-    // this.products$ = this.productsService.getAllProducts();
-
-    // // Si vous voulez également vous abonner et effectuer des opérations supplémentaires
-    // this.products$.subscribe({
-    //   next: (data) => {
-    //     console.log('Produits récupérés :', data);
-    //   },
-    //   error: (err) => {
-    //     console.error('Erreur lors de la récupération des produits :', err);
-    //   },
-    //   complete: () => {
-    //     console.log('Récupération des produits terminée.');
-    //   },
-    // });
-
-    // Methode 3
     console.log('start');
     this.products$ = this.productsService.getAllProducts().pipe(
       map((data) => {
@@ -66,18 +54,6 @@ export class ProductsComponent implements OnInit {
         of({ dataState: DataStateEnum.ERROR, errorMessage: err.message })
       )
     );
-
-    // Methode 2
-    // this.productsService.getAllProducts().subscribe(
-    //   (data) => {
-    //     this.products = data;
-    //     console.log(data);
-    //     console.dir(data);
-    //   },
-    //   (err) => {
-    //     console.error('Erreur lors de la récupération des produits :', err);
-    //   }
-    // );
   }
 
   // function for submit form
@@ -126,7 +102,7 @@ export class ProductsComponent implements OnInit {
   // get product selected
   onGetSelectedProduct() {
     console.log('start');
-    this.products$ = this.productsService.getAllProducts().pipe(
+    this.products$ = this.productsService.getSelectedProducts().pipe(
       map((data) => {
         console.log(data);
         return { dataState: DataStateEnum.LOADED, data: data };
@@ -150,7 +126,7 @@ export class ProductsComponent implements OnInit {
   /// get Availibale
   onGetAvaiableProduct() {
     console.log('start');
-    this.products$ = this.productsService.getAllProducts().pipe(
+    this.products$ = this.productsService.getAvailableProducts().pipe(
       map((data) => {
         console.log(data);
         return { dataState: DataStateEnum.LOADED, data: data };
@@ -168,5 +144,36 @@ export class ProductsComponent implements OnInit {
     avaliable.subscribe((data) => {
       product.available = data.available;
     });
+  }
+
+  // pour faire event parent to children
+  onActionEvent($event: ActionEvent): void {
+    switch ($event.type) {
+      case ProductActionsTypes.GET_ALL_PRODUCTS:
+        this.onGetAllProducts();
+        break;
+
+      case ProductActionsTypes.GET_SELECTED_PRODUCTS:
+        this.onGetSelectedProduct();
+        break;
+
+      case ProductActionsTypes.GET_AVALIABLE_PRODUCTS:
+        this.onGetAvaiableProduct();
+        break;
+
+      case ProductActionsTypes.SEARCH_PRODUCTS:
+        if ($event.payload && $event.payload.keyword) {
+          this.onSerach({ keyword: $event.payload.keyword });
+        }
+        break;
+
+      case ProductActionsTypes.NEW_PRODUCT:
+        this.onNewProduct();
+        break;
+
+      default:
+        console.error('Action non reconnue :', $event.type);
+        break;
+    }
   }
 }
