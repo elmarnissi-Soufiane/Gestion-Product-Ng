@@ -113,6 +113,7 @@ export class ProductsComponent implements OnInit {
   // update product
   onUpdateProduct(product: Product) {
     console.log('update product', product);
+    this.router.navigateByUrl('/editProduct/' + product.id);
   }
 
   // create product

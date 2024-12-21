@@ -35,6 +35,23 @@ export class ProductsService {
     return this.http.delete<void>(host + '/products/' + product.id);
   }
 
+  // save Product Ajouter
+  saveProduct(product: Product): Observable<Product> {
+    let host = 'http://localhost:3000';
+    return this.http.post<Product>(host + '/products', product);
+  }
+
+  // edit
+  getProdutById(id: number): Observable<Product> {
+    let host = 'http://localhost:3000';
+    return this.http.get<Product>(host + '/products/' + id);
+  }
+  // update
+  updateProduct(product: Product): Observable<Product> {
+    let host = 'http://localhost:3000';
+    return this.http.put<Product>(host + '/products/' + product.id, product);
+  }
+
   ////////////////
 
   // get Sekected
