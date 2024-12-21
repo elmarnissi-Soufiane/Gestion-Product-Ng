@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Smartphone X",
+      "price": 699.99,
+      "quantity": 25,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "5",
+      "name": "USB-C Charger",
+      "price": 19.99,
+      "quantity": 200,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "6",
+      "name": "Smartwatch Pro",
+      "price": 299.99,
+      "quantity": 15,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "7",
+      "name": "Bluetooth Speaker",
+      "price": 59.99,
+      "quantity": 75,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "8",
+      "name": "External Hard Drive",
+      "price": 79.99,
+      "quantity": 60,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "9",
+      "name": "4K Monitor",
+      "price": 399.99,
+      "quantity": 20,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "10",
+      "name": "Wireless Mouse",
+      "price": 29.99,
+      "quantity": 150,
+      "selected": false,
+      "available": false
+    }
+  ]
+}
