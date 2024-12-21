@@ -13,7 +13,7 @@
       "name": "USB-C Charger",
       "price": 19.99,
       "quantity": 200,
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -44,15 +44,7 @@
       "id": "9",
       "name": "4K Monitor",
       "price": 399.99,
-      "quantity": 20,
-      "selected": true,
-      "available": true
-    },
-    {
-      "id": "10",
-      "name": "Wireless Mouse",
-      "price": 29.99,
-      "quantity": 150,
+      "quantity": 207898,
       "selected": false,
       "available": false
     }

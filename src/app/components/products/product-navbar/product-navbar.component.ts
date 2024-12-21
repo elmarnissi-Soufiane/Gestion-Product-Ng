@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, Output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
-import { ActionEvent, ProductActionsTypes } from '../../state/product.state';
+import { ActionEvent, ProductActionsTypes } from '../../../state/product.state';
 
 @Component({
   selector: 'app-product-navbar',

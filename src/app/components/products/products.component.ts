@@ -12,7 +12,7 @@ import {
 } from '../../state/product.state';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductNavbarComponent } from '../../pages/product-navbar/product-navbar.component';
+import { ProductNavbarComponent } from './product-navbar/product-navbar.component';
 import { ProductListComponent } from '../../pages/product-list/product-list.component';
 
 @Component({
@@ -24,7 +24,6 @@ import { ProductListComponent } from '../../pages/product-list/product-list.comp
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ProductNavbarComponent,
     ProductNavbarComponent,
     ProductListComponent,
   ],

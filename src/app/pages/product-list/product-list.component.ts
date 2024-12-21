@@ -10,11 +10,12 @@ import { Product } from '../../models/product';
 import { EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ProductItemComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
@@ -59,5 +60,8 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  //onActionEventList($event: any) {}
+  // get Output Event for item-productcheck product
+  onActionEvent($event: ActionEvent): void {
+    this.productsListEventEmitter.emit($event);
+  }
 }
