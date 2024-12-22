@@ -9,6 +9,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { EventDriverService } from '../../services/event.driver.service';
+import { ProductActionsTypes } from '../../state/product.state';
 
 @Component({
   selector: 'app-edit-form',
@@ -28,7 +30,8 @@ export class EditFormComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductsService,
-    private _formebuilder: FormBuilder
+    private _formebuilder: FormBuilder,
+    private eventDriverService: EventDriverService
   ) {
     // recupere id depuis l'url
     this.productId = activatedRoute.snapshot.params['id'];
@@ -56,6 +59,9 @@ export class EditFormComponent implements OnInit {
       this.productFormGroup?.value
     );
     update.subscribe((data) => {
+      this.eventDriverService.publishEvent({
+        type: ProductActionsTypes.PRODUCT_UPDATED,
+      });
       alert('updated  ');
     });
   }

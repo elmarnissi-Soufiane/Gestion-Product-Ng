@@ -10,6 +10,10 @@ export enum ProductActionsTypes {
   AVAILIABLE_PRODUCT = '[Product] Avaliable Selected Product',
   UPDATE_PRODUCT = '[Product] Update Product',
   DELETE_PRODUCT = '[Product] Delete Product',
+
+  // Output Actions
+  PRODUCT_ADDED = '[Product] Added Product',
+  PRODUCT_UPDATED = '[Product] Update Product',
 }
 
 // interface qui enviyer un evenement

@@ -9,6 +9,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { Product } from '../../models/product';
+import { EventDriverService } from '../../services/event.driver.service';
+import { ProductActionsTypes } from '../../state/product.state';
 
 @Component({
   selector: 'app-product-form',
@@ -32,7 +34,8 @@ export class ProductFormComponent implements OnInit {
 
   constructor(
     private _formGroup: FormBuilder,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private eventDriverService: EventDriverService
   ) {}
 
   ngOnInit(): void {}
@@ -46,6 +49,9 @@ export class ProductFormComponent implements OnInit {
     );
     save.subscribe({
       next: (savedProduct) => {
+        this.eventDriverService.publishEvent({
+          type: ProductActionsTypes.PRODUCT_ADDED,
+        });
         console.log('Produit sauvegardé avec succès :', savedProduct);
       },
       error: (err) => {

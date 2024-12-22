@@ -5,7 +5,7 @@
       "name": "Smartphone X",
       "price": 699.99,
       "quantity": 25,
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -17,19 +17,51 @@
       "available": false
     },
     {
-      "id": "8",
-      "name": "External Hard Drive",
-      "price": 79.99,
-      "quantity": 688,
+      "id": "ba19",
+      "name": "Elmarnissi tarik",
+      "price": 446546,
+      "quantity": 8798,
       "selected": true,
+      "available": true
+    },
+    {
+      "id": "a07c",
+      "name": "Elmarnissi tarik",
+      "price": 446546,
+      "quantity": 8798,
+      "selected": false,
       "available": false
     },
     {
-      "id": "5983",
-      "name": "soufiane",
-      "price": 78987,
-      "quantity": 13,
+      "id": "d71a",
+      "name": "kjdl",
+      "price": 5465,
+      "quantity": 8787,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "979f",
+      "name": "kjdl",
+      "price": 5465,
+      "quantity": 8787,
       "selected": false,
+      "available": true
+    },
+    {
+      "id": "5a34",
+      "name": "kljmslù",
+      "price": 4,
+      "quantity": 0,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "6989",
+      "name": "kljmslù",
+      "price": 454,
+      "quantity": 4,
+      "selected": true,
       "available": true
     }
   ]
