@@ -5,8 +5,8 @@
       "name": "Smartphone X",
       "price": 699.99,
       "quantity": 25,
-      "selected": false,
-      "available": false
+      "selected": true,
+      "available": true
     },
     {
       "id": "5",
@@ -15,22 +15,6 @@
       "quantity": 200,
       "selected": false,
       "available": true
-    },
-    {
-      "id": "6",
-      "name": "Smartwatch Pro",
-      "price": 299.99,
-      "quantity": 15,
-      "selected": false,
-      "available": false
-    },
-    {
-      "id": "7",
-      "name": "Bluetooth Speaker",
-      "price": 59.99,
-      "quantity": 75,
-      "selected": false,
-      "available": false
     },
     {
       "id": "8",

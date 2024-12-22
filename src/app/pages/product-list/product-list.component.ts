@@ -11,6 +11,7 @@ import { EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { EventDriverService } from '../../services/event.driver.service';
 
 @Component({
   selector: 'app-product-list',
@@ -25,43 +26,64 @@ export class ProductListComponent implements OnInit {
   // Input envoey data from childrenn to parent Product pour affihcre sur fields utiliser sur widgets
   @Input() productsInputs$: Observable<AppDataState<Product[]>> | null = null;
   // get ouptut data from parent to childdren
-  @Output() productsListEventEmitter: EventEmitter<ActionEvent> =
-    new EventEmitter<ActionEvent>();
+  // @Output() productsListEventEmitter: EventEmitter<ActionEvent> =
+  //   new EventEmitter<ActionEvent>();
 
-  constructor() {}
+  constructor(private eventDriverService: EventDriverService) {}
 
   ngOnInit(): void {}
 
   onSelectProduct(product: Product) {
-    this.productsListEventEmitter.emit({
+    // this.productsListEventEmitter.emit({
+    //   type: ProductActionsTypes.SELECTED_PRODUCT,
+    //   payload: product,
+    // });
+
+    this.eventDriverService.publishEvent({
       type: ProductActionsTypes.SELECTED_PRODUCT,
       payload: product,
     });
   }
 
   onAvaliableProduct(product: Product) {
-    this.productsListEventEmitter.emit({
+    // this.productsListEventEmitter.emit({
+    //   type: ProductActionsTypes.AVAILIABLE_PRODUCT,
+    //   payload: product,
+    // });
+
+    this.eventDriverService.publishEvent({
       type: ProductActionsTypes.AVAILIABLE_PRODUCT,
       payload: product,
     });
   }
 
   onDeleteProduct(product: Product) {
-    this.productsListEventEmitter.emit({
+    // this.productsListEventEmitter.emit({
+    //   type: ProductActionsTypes.DELETE_PRODUCT,
+    //   payload: product,
+    // });
+
+    this.eventDriverService.publishEvent({
       type: ProductActionsTypes.DELETE_PRODUCT,
       payload: product,
     });
   }
 
   onUpdateProduct(product: Product) {
-    this.productsListEventEmitter.emit({
-      type: ProductActionsTypes.UPDATE_PRODUCT,
+    // this.productsListEventEmitter.emit({
+    //   type: ProductActionsTypes.UPDATE_PRODUCT,
+    //   payload: product,
+    // });
+
+    this.eventDriverService.publishEvent({
+      type: ProductActionsTypes.DELETE_PRODUCT,
       payload: product,
     });
   }
 
   // get Output Event for item-productcheck product
-  onActionEvent($event: ActionEvent): void {
-    this.productsListEventEmitter.emit($event);
-  }
+  // onActionEvent($event: ActionEvent): void {
+  //   //this.productsListEventEmitter.emit($event);
+  //   this.eventDriverService.publishEvent($event);
+  // }
 }

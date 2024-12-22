@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductNavbarComponent } from './product-navbar/product-navbar.component';
 import { ProductListComponent } from '../../pages/product-list/product-list.component';
+import { EventDriverService } from '../../services/event.driver.service';
 
 @Component({
   selector: 'app-products',
@@ -36,10 +37,19 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private productsService: ProductsService,
-    private router: Router
+    private router: Router,
+    // gerer composant
+    private eventDriverService: EventDriverService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Pour utiliser Methode actionEvent
+    this.eventDriverService.sourceEventSubjectObservable.subscribe(
+      (actionEvent: ActionEvent) => {
+        this.onActionEvent(actionEvent);
+      }
+    );
+  }
 
   // recuperer les products
   onGetAllProducts() {

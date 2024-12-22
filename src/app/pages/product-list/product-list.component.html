@@ -16,7 +16,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <app-product-item style="display: contents" [product]="product" *ngFor="let product of products.data" (eventEmitterItemProductList)="onActionEvent($event)"></app-product-item>
+                    <!-- <app-product-item style="display: contents" [product]="product" *ngFor="let product of products.data" (eventEmitterItemProductList)="onActionEvent($event)"></app-product-item> -->
+                    <app-product-item style="display: contents" [product]="product" *ngFor="let product of products.data"></app-product-item>
                 </tbody>
             </table>
         </ng-container>
