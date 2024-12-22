@@ -13,8 +13,8 @@
       "name": "USB-C Charger",
       "price": 19.99,
       "quantity": 200,
-      "selected": false,
-      "available": true
+      "selected": true,
+      "available": false
     },
     {
       "id": "8",
@@ -22,15 +22,15 @@
       "price": 79.99,
       "quantity": 688,
       "selected": true,
-      "available": true
+      "available": false
     },
     {
-      "id": "9",
-      "name": "4K Monitor",
-      "price": 399.99,
-      "quantity": 207898,
+      "id": "5983",
+      "name": "soufiane",
+      "price": 78987,
+      "quantity": 13,
       "selected": false,
-      "available": false
+      "available": true
     }
   ]
 }

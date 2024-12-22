@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { ActionEvent, ProductActionsTypes } from '../../../state/product.state';
 import { EventDriverService } from '../../../services/event.driver.service';
+import { StatsComponent } from '../../../pages/stats/stats.component';
 
 @Component({
   selector: 'app-product-navbar',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, StatsComponent],
   templateUrl: './product-navbar.component.html',
   styleUrl: './product-navbar.component.css',
 })

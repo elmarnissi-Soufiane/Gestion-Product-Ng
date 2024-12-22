@@ -76,7 +76,7 @@ export class ProductListComponent implements OnInit {
     // });
 
     this.eventDriverService.publishEvent({
-      type: ProductActionsTypes.DELETE_PRODUCT,
+      type: ProductActionsTypes.UPDATE_PRODUCT,
       payload: product,
     });
   }
