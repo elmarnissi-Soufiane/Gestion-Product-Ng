@@ -20,16 +20,8 @@
       "id": "6",
       "name": "Smartwatch Pro",
       "price": 299.99,
-      "quantity": 15,
-      "selected": false,
-      "available": false
-    },
-    {
-      "id": "7",
-      "name": "Bluetooth Speaker",
-      "price": 59.99,
-      "quantity": 75,
-      "selected": false,
+      "quantity": 185,
+      "selected": true,
       "available": false
     },
     {
@@ -47,6 +39,14 @@
       "quantity": 207898,
       "selected": false,
       "available": false
+    },
+    {
+      "id": "aac7",
+      "name": "soufiane",
+      "price": 11,
+      "quantity": 1112,
+      "selected": false,
+      "available": true
     }
   ]
 }
